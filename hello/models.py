@@ -13,6 +13,8 @@ class LogMessage(models.Model):
 class User(models.Model):
     login=models.CharField(max_length=50, verbose_name="Логин")
     password=models.CharField(max_length=30, verbose_name="Пароль")
+
+
     
 class Sights(models.Model):
     COUNTRY_CHOICES ={
@@ -27,3 +29,6 @@ class Sights(models.Model):
     description=models.CharField(max_length=200)
     country=models.CharField(choises=COUNTRY_CHOICES)
     year_of_construction=models.IntegerField()
+
+    def __str__(self):
+        return 'Название: [0], год постройки: [1], цена на вход: [2], страна: [3]'.format(self.name,self.year_of_construction,self.price, self.country,)
