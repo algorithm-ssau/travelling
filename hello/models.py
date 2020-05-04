@@ -23,7 +23,7 @@ class Sights(models.Model):
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
     description=models.CharField(max_length=200)
-    country=models.CharField(choices=COUNTRY_CHOICES)
+    country=models.CharField(max_length=50,choices=COUNTRY_CHOICES)
     year_of_construction=models.IntegerField()
 
     def __str__(self):
