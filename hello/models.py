@@ -10,25 +10,21 @@ class LogMessage(models.Model):
         date = timezone.localtime(self.log_date)
         return f"'{self.message}' logged on {date.strftime('%A, %d %B, %Y at %X')}"
 
-class User(models.Model):
-    login=models.CharField(max_length=50, verbose_name="Логин")
-    password=models.CharField(max_length=30, verbose_name="Пароль")
-
 
     
 class Sights(models.Model):
     COUNTRY_CHOICES ={
-        (Russia, "Russia"),
-        (Italy, "Italy"),
-        (France, "France"),
-        (Germany, "Germany"),
-        (Norway, "Norway"),
+        ("RUSSIA", "Russia"),
+        ("ITALY", "Italy"),
+        ("FRANCE", "France"),
+        ("GERMANY", "Germany"),
+        ("NORWAY", "Norway"),
     }
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
     description=models.CharField(max_length=200)
-    country=models.CharField(choises=COUNTRY_CHOICES)
+    country=models.CharField(max_length=50,choices=COUNTRY_CHOICES)
     year_of_construction=models.IntegerField()
 
     def __str__(self):
-        return 'Название: [0], год постройки: [1], цена на вход: [2], страна: [3]'.format(self.name,self.year_of_construction,self.price, self.country,)
+        return 'Название: {0}, год постройки: {1}, цена на вход: {2}, страна:'.format(self.name,self.year_of_construction,self.price)
