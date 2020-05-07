@@ -18,17 +18,17 @@ class User(models.Model):
     
 class Sights(models.Model):
     COUNTRY_CHOICES ={
-        (Russia, "Russia"),
-        (Italy, "Italy"),
-        (France, "France"),
-        (Germany, "Germany"),
-        (Norway, "Norway"),
+        ('Russia', "Russia"),
+        ('Italy', "Italy"),
+        ('France', "France"),
+        ('Germany', "Germany"),
+        ('Norway', "Norway")
     }
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
     description=models.CharField(max_length=200)
-    country=models.CharField(choises=COUNTRY_CHOICES)
+    country=models.CharField(choices=COUNTRY_CHOICES, max_length=50)
     year_of_construction=models.IntegerField()
 
     def __str__(self):
-        return 'Название: [0], год постройки: [1], цена на вход: [2], страна: [3]'.format(self.name,self.year_of_construction,self.price, self.country,)
+        return f'Название: {self.name}, год постройки: {self.year_of_construction}, цена на вход: {self.price}, страна:{self.country}'
