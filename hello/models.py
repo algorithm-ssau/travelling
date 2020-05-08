@@ -14,33 +14,29 @@ class LogMessage(models.Model):
     
 class Sights(models.Model):
     COUNTRY_CHOICES ={
-<<<<<<< HEAD
         ('Russia', "Russia"),
         ('Italy', "Italy"),
         ('France', "France"),
         ('Germany', "Germany"),
         ('Norway', "Norway")
-=======
-        ("RUSSIA", "Russia"),
-        ("ITALY", "Italy"),
-        ("FRANCE", "France"),
-        ("GERMANY", "Germany"),
-        ("NORWAY", "Norway"),
->>>>>>> ade3603292677785091ae823eab2e419262da61b
+
     }
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
     description=models.CharField(max_length=200)
-<<<<<<< HEAD
+
     country=models.CharField(choices=COUNTRY_CHOICES, max_length=50)
     year_of_construction=models.IntegerField()
+    image = models.ImageField(blank=True, upload_to='images', null=True, help_text='150x150px', verbose_name='Ссылка картинки')
+
 
     def __str__(self):
         return f'Название: {self.name}, год постройки: {self.year_of_construction}, цена на вход: {self.price}, страна:{self.country}'
-=======
-    country=models.CharField(max_length=50,choices=COUNTRY_CHOICES)
-    year_of_construction=models.IntegerField()
 
-    def __str__(self):
-        return 'Название: {0}, год постройки: {1}, цена на вход: {2}, страна:'.format(self.name,self.year_of_construction,self.price)
->>>>>>> ade3603292677785091ae823eab2e419262da61b
+    def image_img(self):
+            if self.image:
+                return u'<a href="{self.image.url}" target="_blank"><img src="{self.image.url}" width="100"/></a>'
+            else:
+                return '(Нет изображения)'
+    image_img.short_description = 'Картинка'
+    image_img.allow_tags = True
