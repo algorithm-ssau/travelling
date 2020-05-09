@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Sights
+from .models import Sight
 from .models import Country
 
-admin.site.Register(Sights)
-admin.site.Register(Country)
+admin.site.register(Sight)
+admin.site.register(Country)
 
 # Register your models here.
