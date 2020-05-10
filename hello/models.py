@@ -12,8 +12,8 @@ class LogMessage(models.Model):
 
 class Country(models.Model):
     nameCountry=models.CharField(max_length=20)
-    descCountry=models.CharField(max_length=50)
-    im=models.ImageField(blank=True, upload_to='images', null=True, help_text='150x150px', verbose_name='Ссылка картинки страны')
+    descCountry=models.CharField(max_length=500)
+    im=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны')
     def __str__(self):
         return f'Название: {self.nameCountry}, описание:{self.descCountry}'
 
@@ -28,10 +28,10 @@ class Country(models.Model):
 class Sight(models.Model):
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
-    description=models.CharField(max_length=200)
+    description=models.CharField(max_length=500)
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
     year_of_construction=models.IntegerField()
-    image = models.ImageField(blank=True, upload_to='images', null=True, help_text='150x150px', verbose_name='Ссылка картинки')
+    image = models.ImageField(blank=True, upload_to='images', null=True, help_text='380x422px', verbose_name='Ссылка картинки')
     def __str__(self):
         return f'Название: {self.name}, год постройки: {self.year_of_construction}, цена на вход: {self.price}, страна:{self.country}'
 
