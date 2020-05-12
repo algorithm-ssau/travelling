@@ -13,6 +13,10 @@ class LogMessage(models.Model):
 class Country(models.Model):
     nameCountry=models.CharField(max_length=20)
     descCountry=models.CharField(max_length=500)
+    currency=models.CharField(max_length=15,default='')
+    language=models.CharField(max_length=20,default='')
+    capital=models.CharField(max_length=20,default='Moscow')
+    flag=models.ImageField(blank=True,upload_to='images',null=True,verbose_name='Флаг')
     im=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны')
     def __str__(self):
         return f'Название: {self.nameCountry}, описание:{self.descCountry}'
@@ -28,6 +32,9 @@ class Country(models.Model):
 class Sight(models.Model):
     name=models.CharField(max_length=50, verbose_name="Название")
     price=models.IntegerField()
+    address = models.CharField(max_length=50,default='')
+    city=models.CharField(max_length=30,default='')
+    timeOfWork=models.CharField(max_length=15,default='')
     description=models.CharField(max_length=500)
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
     year_of_construction=models.IntegerField()
