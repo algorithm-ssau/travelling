@@ -16,13 +16,24 @@ class Country(models.Model):
     currency=models.CharField(max_length=25,default='')
     language=models.CharField(max_length=150,default='')
     capital=models.CharField(max_length=20,default='')
+    mapCountry=models.CharField(max_length=500,null =True)
     flag=models.ImageField(blank=True,upload_to='images',null=True,verbose_name='Флаг')
-    im=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны')
+    imtitle=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки заголовка')
+    im1=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 1')
+    im2=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 2')
+    im3=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 3')
+    im4=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 4')
+    im5=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 5')
+    im6=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 6')
+    im7=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 7')
+    im8=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 8')
+    im9=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 9')
+    im0=models.ImageField(blank=True, upload_to='images', null=True, help_text='380x250px', verbose_name='Ссылка картинки страны 10')
     def __str__(self):
         return f'{self.nameCountry}'
 
     def image_img(self):
-            if self.im:
+            if self.im1:
                 return u'<a href="{self.im.url}" target="_blank"><img src="{self.im.url}" width="100"/></a>'
             else:
                 return '(Нет изображения)'
