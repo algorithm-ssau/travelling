@@ -48,7 +48,7 @@ class Sight(models.Model):
     timeOfWork=models.CharField(max_length=15,default='')
     description=models.CharField(max_length=1000)
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
-    year_of_construction=models.IntegerField()
+    year_of_construction=models.CharField(max_length=15, null=True)
     image = models.ImageField(blank=True, upload_to='images', null=True, help_text='380x422px', verbose_name='Ссылка картинки')
     def __str__(self):
         return f'Название: {self.name}, страна:{self.country}'
