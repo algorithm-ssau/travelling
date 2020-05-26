@@ -32,6 +32,14 @@ def about(request):
 def contact(request):
     return render(request, "hello/contact.html")
 
+#create method to render main page
+def main(request):
+    return render(request, "hello/main.html")
+
+#create method to render country page
+def country(request):
+    return render(request, "hello/country.html")
+
 def log_message(request):
     form = LogMessageForm(request.POST or None)
 

@@ -14,5 +14,7 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("log/", views.log_message, name="log"),
     path("", home_list_view, name="home"),
+    path("main/", views.main, name="main"),
+    path("country/", views.country, name="country"),
     
 ]

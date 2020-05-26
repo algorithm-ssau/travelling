@@ -29,7 +29,10 @@ margin:0 auto;
 	width: 100%;
 	height: 100vh;
 
-	background: url("../../../static_collected/admin//img/hero_small.jpg") center
+	/* background: url("../../../static_collected/admin//img/hero_small.jpg") center
+	no-repeat; */
+	
+	background: url( '/static/hello/images/hero_small.jpg') center
     no-repeat;
 	background-attachment: fixed!important; 
 	background-size: cover;
