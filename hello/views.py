@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from hello.forms import LogMessageForm
-from hello.models import LogMessage
+from hello.models import LogMessage, Sight, Country
 from django.views.generic import ListView
 
 
@@ -38,6 +38,13 @@ def main(request):
 
 #create method to render country page
 def country(request):
+    country = Country.objects.get(nameCountry = "Австрия")
+    print(country.imtitle)
+    print(country.im1)
+    sights = Sight.objects.filter(country = Country.objects.get(nameCountry = country))
+    for num, sight in enumerate(sights):
+        print(f'{num}:{sight.image}')
+        
     return render(request, "hello/country.html")
 
 def log_message(request):
