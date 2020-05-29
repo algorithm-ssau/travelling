@@ -55,21 +55,21 @@
 
 		<div class="about">
 			<div class="about_item">
-				<a href="#"><div class="about_img">
+				<a href="{% url 'country' 'Италия' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about1.jpg' %}">
 				</div>
 				<div class="about_text"> Италия</div></a>
 			</div>
 
 			<div class="about_item">
-				<a href="#"><div class="about_img">
+				<a href="{% url 'country' 'Франция' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about2.jpg' %}">
 				</div>
 			<div class="about_text"> Франция</div></a>
 		</div>
 
 			<div class="about_item">
-			<a href="#"><div class="about_img">
+			<a href="{% url 'country' 'Норвегия' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about3.jpg' %}">
 				</div>
 				<div class="about_text"> Норвегия</div></a>
@@ -78,26 +78,70 @@
 
 		<div class="about">
 			<div class="about_item">
-				<a href="#"><div class="about_img">
+				<a href="{% url 'country' 'Испания' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about4.jpg' %}">
 				</div>
 			<div class="about_text"> Испания</div></a>
 		</div>
 
 			<div class="about_item">
-				<a href="#"><div class="about_img">
+				<a href="{% url 'country' 'Великобритания' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about5.jpg' %}">
 				</div>
 				<div class="about_text"> Великобритания</div></a>
 			</div>
 
 			<div class="about_item">
-			<a href="#"><div class="about_img">
+			<a href="{% url 'country' 'Германия' %}"><div class="about_img">
 					<img src="{% static 'hello/images/about6.jpg' %}">
 				</div>
 				<div class="about_text"> Германия</div></a>
 			</div>
 			</div>
+			<div class="about">
+				<div class="about_item">
+					<a href="{% url 'country' 'Австрия' %}"><div class="about_img">
+						<img src="{% static 'hello/images/about1.jpg' %}">
+					</div>
+					<div class="about_text"> Австрия</div></a>
+				</div>
+	
+				<div class="about_item">
+					<a href="{% url 'country' 'Исландия' %}"><div class="about_img">
+						<img src="{% static 'hello/images/about2.jpg' %}">
+					</div>
+				<div class="about_text"> Исландия</div></a>
+			</div>
+	
+				<div class="about_item">
+				<a href="{% url 'country' 'Чехия' %}"><div class="about_img">
+						<img src="{% static 'hello/images/about3.jpg' %}">
+					</div>
+					<div class="about_text"> Чехия</div></a>
+				</div>
+				</div>
+				<div class="about">
+					<div class="about_item">
+						<a href="{% url 'country' 'Сербия' %}"><div class="about_img">
+							<img src="{% static 'hello/images/about1.jpg' %}">
+						</div>
+						<div class="about_text"> Сербия</div></a>
+					</div>
+		
+					<div class="about_item">
+						<a href="{% url 'country' 'Монако' %}"><div class="about_img">
+							<img src="{% static 'hello/images/about2.jpg' %}">
+						</div>
+					<div class="about_text"> Монако</div></a>
+				</div>
+		
+					<div class="about_item">
+					<a href="{% url 'country' 'Нидерланды' %}"><div class="about_img">
+							<img src="{% static 'hello/images/about3.jpg' %}">
+						</div>
+						<div class="about_text"> Нидерланды</div></a>
+					</div>
+					</div>
 		</div><!-- container-->
 	</div>	
 	</section>
@@ -127,7 +171,7 @@
 	
 				<div class="place_item">
 					<div class="place_img">
-						<img class="place_photo" src="{% static 'hello/images/place1.jpg' %}">
+						<img class="place_photo" src="{% static 'hello/images/main/sights/place1.jpg' %}">
 						<div class="about_place">
 					<h3 class="place_name">Замок Нойшванштайн</h3>
 					<p class="place_text" ><b>Страна:</b> <a class="place_href"href="#">Германия</a></p>
@@ -142,7 +186,7 @@
 	
 				<div class="place_item">
 					<div class="place_img">
-						<img class="place_photo" src="{% static 'hello/images/place2.jpg' %}">
+						<img class="place_photo" src="{% static 'hello/images/main/sights/place2.jpg' %}">
 						<div class="about_place">
 					<h3 class="place_name">Диснейленд</h3>
 					<p class="place_text" ><b>Страна:</b> <a class="place_href"href="#">Франция</a></p>
@@ -157,7 +201,7 @@
 	
 				<div class="place_item">
 				<div class="place_img">
-						<img class="place_photo" src="{% static 'hello/images/place3.jpg' %}">
+						<img class="place_photo" src="{% static 'hello/images/main/sights/place3.jpg' %}">
 						<div class="about_place">
 					<h3 class="place_name">Лондонский Глаз</h3>
 					<p class="place_text" ><b>Страна:</b> <a class="place_href"href="#">Великобритания</a></p>
@@ -188,7 +232,7 @@
 						
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service1.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service1.jpg' %}">
 						</div>
 					<div class="service_content">
 						<p>Booking.com - самый популярный в мире интернет ресурс по бронированию отелей, гарантирует лучшие цены на любой тип недвижимости, начиная от кемпингов и заканчивая роскошными 5-звездочными отелями.</p>
@@ -202,7 +246,7 @@
 					<a href="https://www.aviasales.ru/" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service2.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service2.jpg' %}">
 						</div>
 						<div class="service_content">
 					<p>Aviasales.ru — первый и крупнейший в Рунете метапоиск дешевых авиабилетов. Сервис ищет авиабилеты в 728 авиакомпаниях, 200 авиакассах и 5 системах бронирования, используя наиболее современные технологии. Вы сами выбираете, где покупать. Инновационный нанопоиск авиабилетов найдет для Вас не только самый лучший вариант на конкретные даты, но и предложит другие даты, когда стоимость перелета может быть ещё ниже.</p> 
@@ -212,7 +256,7 @@
 					<a href="https://hotellook.ru/" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service3.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service3.jpg' %}">
 						</div> 
 						<div class="service_content">
 					<p>HotelLook.ru - сервис, позволяющий находить и сравнивать цены на отели по всему миру, предоставляемые ведущими системами бронирования. Проект HotelLook.ru создан в 2013 году креативной командой крупнейшего в России поисковика авиабилетов AviaSales.ru. Сегодня Hotellook.ru предоставляет собранную воедино информацию о более чем 250 000 отелях в 205 странах, работая с данными более 10 систем онлайн бронирования, таких как Booking.com, Agoda.com, Hotels.com, Expedia и др.</p>
@@ -222,7 +266,7 @@
 					<a href="https://experience.tripster.ru/?utm_campaign=affiliates&utm_medium=link&utm_source=wikiway" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service4.jpg' %}"">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service4.jpg' %}"">
 						</div> 
 						<div class="service_content"> 
 					<p>Tripster.ru – сервис необычных экскурсий от местных жителей. Мы предлагаем более 1600 экскурсий в 220 городах мира.</p>
@@ -238,7 +282,7 @@
 					<a href="https://www.rentalcars.com/Home.do?affiliateCode=admitad&admitad_uid=04d959c3a945de5719d51d4d747cefec&adplat=04d959c3a945de5719d51d4d747cefec" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service5.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service5.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>Rentalcars.com – крупнейший в мире онлайн сервис по прокату автомобилей, который организует прокат в 160 странах и осуществляет поддержку на 40 языках. Работая только с лидирующими поставщиками, сервис предлагает отличные цены на все типы автомобилей, включая минивэны, роскошные авто класса люкс и автоматы. Многоязычный колл-центр открыт 7 дней в неделю, поэтому rentalcars может найти для вас прокат по лучшим ценам в любое время и любом месте.</p> 
@@ -249,7 +293,7 @@
 					<a href="https://level.travel/?utm_source=Travelpayouts&utm_medium=CPA&utm_content=22785&utm_campaign=tpo&aflt=Travelpayouts&l=cd73c5e0839c4aa2b2cd66fbe5-22785&affmarker=22785" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service6.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service6.jpg' %}">
 						</div> 
 						<div class="service_content">
 					<p>Level.Travel — это автоматизированная система поиска туров от всех надежных туроператоров и их покупки в режиме онлайн, без участия турагента. Система позволяет купить тур по аналогии с покупкой авиабилетов или бронированием отелей онлайн.</p> 
@@ -264,7 +308,7 @@
 					<a href="https://travelata.ru/?sub_id=8f9aca9f6a6f40e5a604f2e4e0-22785&utm_medium=cpa&utm_source=advcake&utm_campaign=travelpayout&advcake=1&utm_content=22785&utm_term=771" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service7.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service7.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>Travelata.ru – это поиск самых выгодных туров. К проекту подключено более 120 туроператоров, и Травелата гарантирует, что эти туры можно купить по самым выгодным условиям. Партнерами Travelata.ru являются только самые крупные и надежные туроператоры, поэтому можно быть уверенным в качестве предлагаемых туров.</p> 
@@ -275,7 +319,7 @@
 					<a href="https://www.onlinetours.ru/?advert=196&utm_medium=cpa&utm_source=travelpayouts&utm_campaign=22785&sub_id=2fcecb726d4849ad8d7bbc1e38-22785" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service8.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service8.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>Onlinetours – популярный онлайн-сервис по продаже туров от ведущих туроператоров, более чем в 80 стран мира. Миллионы турпакетов, в которые входят авиабилеты, проживание в отеле, медицинская страховка и трансфер.</p> 
@@ -291,7 +335,7 @@
 					<a href="https://autobus.travel/?utm_source=travelpayouts&sub_id=a8ce4f6f39e148bf9ccbd7bfc9-22785" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service9.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service9.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>FlixBus предлагает безопасные и комфортные поездки дальнего следования по Европе. Компания FlixBus предлагает пассажирам с любым бюджетом современный, доступный и удобный способ путешествовать. С момента основания в 2013 г. FlixBus создала крупнейшую транспортную сеть в Европе, охватывающую 26 стран и обслуживающую более 60 млн. пассажиров. Благодаря развитию технологий мы кардинально усовершенствовали сферу автобусных перевозок: создали систему электронных билетов, разработали приложение FlixBus, оснастили автобусы бесплатным Wi-Fi и внедрили систему отслеживания в реальном времени на основе GPS. Сеть FlixBus обслуживается партнерами-перевозчиками, в число которых входят малые и средние компании.</p> 
@@ -301,7 +345,7 @@
 					<a href="https://www.thetrainline.com/?phcode=1101l17151.&utm_campaign=travelpayouts&utm_medium=affiliate&utm_source=network&cm=0a1e.1101l17151&phcam=1100l229&~campaign_id=1100l229&~click_id=1101l8gxjbHd" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service10.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service10.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>Trainline.com — популярный сайт и мобильное приложение для бронирования ж/д и автобусных билетов по Европе. Компания работает с 209 железнодорожными и автобусными компаниями, и предлагает клиентам тысячи маршрутов по 45 странам. 
@@ -312,7 +356,7 @@
 					<a href="https://www.compensair.com/ru/?utm_source=travelpayouts&utm_medium=affiliate&sub_id=50e7fbb235a34efe9c8259f4d2-22785" class="offerhref" target="_blank" rel="nofollow">
 						<div class= "service_item"> 
 						<div class="service_img">
-							<img class="place_photo" src="{% static 'hello/images/service11.jpg' %}">
+							<img class="place_photo" src="{% static 'hello/images/main/service/service11.jpg' %}">
 						</div> 
 						<div class="service_content"> 
 					<p>Compensair помогает получить до 600 евро за задержку, отмену или овербукинг. Сервис работает в рамках законодательства ЕС и Турции.</p>

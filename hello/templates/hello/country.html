@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +25,12 @@
 	</div>
 </header>
 
-<div class="main">
+<div class="main" style="background: url({{country.imtitle.url}}) center no-repeat; background-size: cover; background-attachment: fixed!important; ">
 	<div class="container">
 		<div class="main_inner">
 		<a  class = "back_main_title" href="file:///C:/Users/User/Desktop/site/index.html#">
 		<h3>Страны Европы</h3></a>
-		<h1 class="main_title">Австрия</h1>
+		<h1 class="main_title">{{country.nameCountry}}</h1>
 		
 		</div>
 	</div>
@@ -44,36 +45,13 @@
 	<div class="slider">
 		<div class="slider__wrapper">
 			<div class="slider__items">
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_1.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_2.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_3.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_4.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_5.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_6.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_7.jpg" alt="c1">
-				</div>
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_8.jpg" alt="c1">
-				</div>  
-				<div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_9.jpg" alt="c1">
-        </div>
+        {% for img in images %}
         <div class="slider__item">
-					<img class="img-fluid" src="../../../images/Austria_10.jpg" alt="c1">
-				</div>  
+					<img class="img-fluid" src="{{img.url}}" alt="c1">
+        </div>
+        {% empty %}
+        {% endfor %}
+				
 			</div>
 		</div>
 		<a class="slider__control slider__control_prev" href="#" role="button"></a>
@@ -299,20 +277,20 @@
       isAutoplay: true
     });
   </script>
-	
+  
   
   <div class="container">
 		<div class="section_header">
 			<h3 id="страна" class="section_suptitle">
-				Австрия (Austria)
+				{{country.nameCountry}}
 			</h3>
 			<div id="sweeties" class="menu">
 				<span class="title">Краткая информация о стране</span>
 					<ul>
-						<li>Флаг - <img id = "i" width="95" height="63" src="img_country/флаг.png" alt="Флаг Австрии"></li>
-						<li>Столица - Вена </li>
-						<li>Официальный язык - Немецкий  </li>
-						<li>Валюта - Евро</li>
+						<li>Флаг - <img id = "i" width="95" height="63" src="{{country.flag.url}}" alt="Флаг {{country.nameCountry}}"></li>
+						<li>Столица - {{country.capital}} </li>
+						<li>Официальный язык - {{country.language}} </li>
+						<li>Валюта - {{country.currency}}</li>
 					</ul>
 
 			</div>
@@ -326,13 +304,13 @@
 				};
 			</script>
 			<div  class="section_text">
-				<p>Австрия расположилась в центре Европы, отхватив себе приличную часть Восточных Альп с их сказочными долинами, мистическими сосновыми чащами и тысячелетними ледниками. Обычно эта ультракомпактная, но щедрая на впечатления страна притягивает тремя вещами – чарующей атмосферой имперской Вены, глянцевыми горнолыжными курортами и возможностью побаловать себя австрийскими гастро-изысками, среди которых особое место занимают кондитерские шедевры. Кроме того, существует несколько «добавочных» направлений, по которым ежесезонно рассредотачиваются тысячи туристов. Среди них – виноградники Вайнфиртеля, термальные курорты, а также невероятной чистоты и прозрачности озера, отпуск на которых обещает качественную эмоциональную перезагрузку и потрясающие фотосессии на фоне альпийских закатов.</p>
+				<p>{{country.descCountry}}</p>
 			</div>
 			<div class = "map">
 			<h3 id="карта"class="section_suptitle">
 				Месторасположение страны
 			</h3>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750981.051707264!2d11.102883715102042!3d47.67461310587651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079b259d2a7f%3A0x1012d47bdde4c1af!2z0JDQstGB0YLRgNC40Y8!5e0!3m2!1sru!2sru!4v1589206855479!5m2!1sru!2sru" 
+				<iframe src="{{country.mapCountry}}" 
 				width=80% height=100% allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 			</div>
 			<div  class = "DD">
@@ -351,111 +329,21 @@
 			
 				<h3 id="дост" class="section_suptitle">Достопримечательности</h3>
 					<div class="about">
-						<div class="about_item">
+            {% for sight in sights %}
+            <div class="about_item">
 							<div class="about_img">
 								<div class="spoiler_links grin"> 
-									<img src="img_country/Austria_Sight_1.jpg">
-								<div class="about_text"> дворец <br> бельведер</div>
+									<img src="{{sight.image.url}}">
+								<div class="about_text"> {{sight.name}} </div>
 								</div>
 								<div class="spoiler_body">
-									<div class= "ob-ta">Дворец Бельведер — одна из самых красивых барочных построек мира. 
-									Он символизирует блеск и роскошь Австрийской империи периода ее расцвета. 
-									Садовый дворец был построен Иоганном Лукасом фон Хильдебрандтом в качестве 
-									летней резиденции принца Евгения Савойского (1663—1736), великого полководца
-									своего времени. С балкона дворца можно полюбоваться городом и зелеными склонами Венского 
-									леса. Во дворце находится Австрийская галерея искусства XIX и XX вв. Жемчужина коллекции 
-									— картины Климта (в том числе и знаменитый «Поцелуй»), Здесь же можно увидеть множество
-									работ французских импрессионистов, живопись эпохи венского стиля бидермейер и картины 
-									знаменитых мастеров XX в. — Кокошки и Хундертвассера.</div>
+									<div class= "ob-ta"> {{sight.description}}</div>
 								</div>
 								
 							 </div>
 						</div>
-						<div class="about_item">
-							<div class="about_img">	
-								<div class ="spoiler_links blue">
-										<img  src="img_country/Austria_Sight_2.jpg" >
-										<div class="about_text">  озеро <br>Нойзидлер-Зе</div>
-								</div>
-								<div class="spoiler_body">
-										<div class= "ob-ta">Нойзидлер-Зе — степное озеро расположенное на границе между Австрией и Венгрией. Его площадь 315 км², из них 240 км² 
-										находится на австрийской территории. Глубина озера не превышает 1,8 м. Озеро окружают болота — идеальное место для гнездования и размножения около 300 видов птиц. 
-										По зарослям тростника и болотам проложено множество пешеходных и велосипедных троп. Летом отдыхающих привлекают превосходные пляжи. Зимой на озере занимаются ледовым яхтингом и скейт-сейлингом. 
-										Национальный парк озера Нойзидлер-Зе — самый большой орнитологический заповедник Центральной Европы. Его площадь 14 000 га, из них 6 000 га расположено на территории Венгрии. Этот регион пользуется большой популярностью у туристов. Здесь можно взять напрокат гребные и парусные лодки и обследовать озеро с воды.
-										Качество воды в озере весьма различно, что зависит от количества солей и ила, образуемых донными отложениями. 
-										
-										</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="about_item">
-							<div class="about_img">
-								<div class="spoiler_links grin"> 
-									<img src="img_country/Austria_Sight_3.jpg">
-								<div class="about_text"> школа<br> верховой езды</div>
-								</div>
-								<div class="spoiler_body">
-									<div class= "ob-ta">Испанская школа верховой езды — уникальное заведение в центре Вены.
-									Это старейшая школа верховой езды в мире, последняя, где обучают всадников и лошадей классической церемонии выводки.</div>
-								</div>
-								
-							 </div>
-						</div>
-						<div class="about_item">
-							<div class="about_img">
-								<div class="spoiler_links grin"> 
-									<img src="img_country/Austria_Sight_4.jpg">
-								<div class="about_text"> дом <br> Хундертвассера</div>
-								</div>
-								<div class="spoiler_body">
-									<div class= "ob-ta">Дом Хундертвассера — необычное здание Вены, которое является жилым домом
-									и произведением искусства одновременно. Это первый шедевр эпатажного архитектора 
-									Фриденсрайха Хундертвассера, построенный по заказу венской мэрии в 1986 году.</div>
-								</div>
-								
-							 </div>
-						</div>
-						<div class="about_item">
-							<div class="about_img">
-								<div class="spoiler_links grin"> 
-									<img src="img_country/Austria_Sight_5.jpg">
-									<div class="about_text">Венская государственная опера<br> </div>
-									</div>
-								<div class="spoiler_body">
-									
-									<div class= "ob-ta">
-									Венская государственная опера — крупнейший оперный театр в Австрии, центр 
-									музыкальной культуры. Венская опера известна не только в Австрии и Европе.
-									На каждом представлении в зрительном зале можно встретить туристов со всего 
-									света от Японии до США и Канады.
-									</div>
-								</div>
-								
-							 </div>
-						</div>
-						<div class="about_item">
-							<div class="about_img">
-								<div class="spoiler_links grin"> 
-									<img src="img_country/Austria_Sight_6.jpg">
-								<div class="about_text">альпы </div>
-								</div>
-								<div class="spoiler_body">
-									<div class= "ob-ta">Альпы – доминирующий горный хребет Западной Европы, 
-									увенчанный вздымающимися прямо к небесам заснеженными пиками, и протянувшийся 
-									извилистым полумесяцем от Средиземного моря до Среднедунайской равнины. Альпийские 
-									горы распростерлись на значительных территориях восьми государств, став неотъемлемой 
-									частью их ландшафтов, пейзажей, культуры и традиций народов, издавна населяющих массивы.
-									С середины позапрошлого столетия отдельные уголки Альп начали приобретать известность
-									среди европейской светской публики, а сегодня этот огромный горный ареал дал приют 
-									сотням горнолыжных курортов, рекреационных центров, стал Меккой для альпинистов со
-									всего мира.
-									</div>
-								</div>
-								
-							 </div>
-						</div>
-					</div>	
+            {% empty %}
+            {% endfor %}	
 			</div>
 				
 		</div>

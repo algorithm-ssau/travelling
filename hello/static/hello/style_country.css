@@ -112,9 +112,9 @@ margin:0 auto;
 	justify-content: center; 
 	width: 100%;
 	height: 100vh;
-  background:url("../../../static_collected/admin/img_country/Austria_title.jpg") center
-   no-repeat;
-	background-size: cover;
+  /* background:url("../../../static_collected/admin/img_country/Austria_title.jpg") center
+   no-repeat; */
+	/* background-size: cover; */
 }
 
 
