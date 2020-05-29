@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 from hello.forms import LogMessageForm
 from hello.models import LogMessage, Sight, Country
 from django.views.generic import ListView
+from django.views.generic.base import TemplateView
 
 
 def hello_there(request, name):
@@ -26,6 +27,16 @@ class HomeListView(ListView):
         context = super(HomeListView, self).get_context_data(**kwargs)
         return context
 
+# class HomePageView(TemplateView):
+
+#     template_name = "hello/main.html"
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['countries'] = Country.objects.all()
+#         context['sights'] = Sight.objects.all()[:3]
+#         return context
+
 def about(request):
     return render(request, "hello/about.html")
 
@@ -39,15 +50,21 @@ def main(request):
 #create method to render country page
 def country(request, country_name):
     country = Country.objects.get(nameCountry = "Австрия")
-    image = country.imtitle
-    context = {'image': image}
-    print(country.imtitle)
-    print(country.im1)
-    # {{image1.user_image.url}}
-    sights = Sight.objects.filter(country = Country.objects.get(nameCountry = country))
-    for num, sight in enumerate(sights):
-        print(f'{num}:{sight.image}')
-        
+    image_list = [country.im1,
+                  country.im2, 
+                  country.im3,
+                  country.im4,
+                  country.im5,
+                  country.im6,
+                  country.im7,
+                  country.im8,
+                  country.im9,
+                  country.im0]
+    sights = Sight.objects.filter(country = Country.objects.get(nameCountry = country_name))
+    context = {'country': country,
+               'images': image_list,
+               'sights': sights
+               }   
     return render(request, "hello/country.html", context)
 
 def log_message(request):
