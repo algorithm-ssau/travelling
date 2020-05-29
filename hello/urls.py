@@ -16,6 +16,6 @@ urlpatterns = [
     path("log/", views.log_message, name="log"),
     path("", home_list_view, name="home"),
     path("main/", views.main, name="main"),
-    path("country/", views.country, name="country"),
+    path("country/<str:country_name>/", views.country, name="country"),
     
 ]

@@ -37,15 +37,18 @@ def main(request):
     return render(request, "hello/main.html")
 
 #create method to render country page
-def country(request):
+def country(request, country_name):
     country = Country.objects.get(nameCountry = "Австрия")
+    image = country.imtitle
+    context = {'image': image}
     print(country.imtitle)
     print(country.im1)
+    # {{image1.user_image.url}}
     sights = Sight.objects.filter(country = Country.objects.get(nameCountry = country))
     for num, sight in enumerate(sights):
         print(f'{num}:{sight.image}')
         
-    return render(request, "hello/country.html")
+    return render(request, "hello/country.html", context)
 
 def log_message(request):
     form = LogMessageForm(request.POST or None)
