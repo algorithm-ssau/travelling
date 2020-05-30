@@ -42,10 +42,10 @@ class Country(models.Model):
                 
 class Sight(models.Model):
     name=models.CharField(max_length=50, verbose_name="Название")
-    price=models.CharField(max_length=20)
+    price=models.CharField(max_length=25)
     address = models.CharField(max_length=55,default='')
     city=models.CharField(max_length=30,default='')
-    timeOfWork=models.CharField(max_length=15,default='')
+    timeOfWork=models.CharField(max_length=25,default='')
     description=models.CharField(max_length=1000)
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
     year_of_construction=models.CharField(max_length=15, null=True)
