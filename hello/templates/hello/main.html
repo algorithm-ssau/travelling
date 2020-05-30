@@ -6,18 +6,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Travelling</title>
-	<title>Document</title>
 	<link rel="stylesheet" href="../../static/hello/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
 <body>
 
 
-	<header class="header">
+	<header class="header" id="header">
 		<div class="container">
 			<div class="header__inner">
 
-				<nav class="nav">
+				<nav class="nav" id="nav">
 					<a class="nav__link" href="#" data-scroll="#about">Страны</a>
 					<a class="nav__link" href="#" data-scroll="#place">Путеводитель</a>
 					<a class="nav__link" href="#" data-scroll="#service">Сервисы</a>
@@ -195,10 +195,10 @@
 				</h2>
 
 			</div>
+
 			<div data-slider>
 				<div class="place">
 					<div>
-
 						<div class="place_item">
 							<div class="place_img">
 								<img class="place_photo" src="{% static 'hello/images/main/sights/place1.jpg' %}">
@@ -218,7 +218,6 @@
 
 				<div class="place">
 					<div>
-
 						<div class="place_item">
 							<div class="place_img">
 								<img class="place_photo" src="{% static 'hello/images/main/sights/place2.jpg' %}">
@@ -237,7 +236,6 @@
 
 				<div class="place">
 					<div>
-
 						<div class="place_item">
 							<div class="place_img">
 								<img class="place_photo" src="{% static 'hello/images/main/sights/place3.jpg' %}">
@@ -250,9 +248,7 @@
 									<p class="place_text"><b>Цена билета:</b>от 30 фунтов</p>
 									<p class="place_text"><b>Время работы: </b> с 10:00 до 20:30</p>
 								</div>
-
 							</div>
-
 						</div>
 					</div>
 				</div>
@@ -267,7 +263,6 @@
 				<p class="section_title_service">К хорошим путешествиям приходится долго готовиться. Мы собрали полезные
 					сайты и сервисы, которые помогут сэкономить деньги и время, а также увидеть всё самое интересное в
 					поездке. Просто забронируйте нужные услуги, перейдя по одной из ссылок ниже. </p>
-
 			</div>
 			<!--section_header-->
 
@@ -520,6 +515,11 @@
 		</div>
 
 	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="{% static 'hello/js/main.js' %}"></script>
 
 </body>
 
