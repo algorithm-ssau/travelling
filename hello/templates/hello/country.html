@@ -14,7 +14,6 @@
 			
 			<nav class="nav">
 			<a class="nav__link" href="#страна">О стране</a>
-			<!--	<a class="nav__link" href="#">Города</a>-->
       <a class="nav__link" href="#фото">Фотографии</a>
 			<a class="nav__link" href="#карта">Карта</a>  
       <a class="nav__link" href="#дост">Достопримечательности</a>
@@ -337,9 +336,15 @@
 								<div class="about_text"> {{sight.name}} </div>
 								</div>
 								<div class="spoiler_body">
-									<div class= "ob-ta"> {{sight.description}}</div>
-								</div>
-								
+									<div class= "ob-ta"> 
+                  <b> <p><u>Цена:</u> {{sight.price}}</p>
+									  <p><u>Город:</u> {{sight.city}} </p>
+									  <p><u>Адрес:</u> {{sight.address}}</p>
+									  <p><u>Время работы:</u>{{sight.timeOfWork}} </p>
+									  <p><u>Год постройки:</u> {{sight.year_of_construction}}</p>
+                    <p><u>Описание: </u> {{sight.description}}</p> </b> 
+                  </div>
+								</div>								
 							 </div>
 						</div>
             {% empty %}
