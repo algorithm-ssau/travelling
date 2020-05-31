@@ -17,9 +17,7 @@ class HomeListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(HomeListView, self).get_context_data(**kwargs)
         return context
-
-
-
+        
 #create method to render main page
 def main(request):
     return render(request, "hello/main.html")
