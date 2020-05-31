@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Travelling</title>
 	<link rel="stylesheet" href="../../static/hello/style.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
 <body>
@@ -18,9 +17,9 @@
 			<div class="header__inner">
 
 				<nav class="nav" id="nav">
-					<a class="nav__link" href="#" data-scroll="#about">Страны</a>
-					<a class="nav__link" href="#" data-scroll="#place">Путеводитель</a>
-					<a class="nav__link" href="#" data-scroll="#service">Сервисы</a>
+					<a class="nav__link" href="#about">Страны</a>
+					<a class="nav__link" href="#place">Путеводитель</a>
+					<a class="nav__link" href="#service">Сервисы</a>
 					<a class="nav__link" href="https://wikiway.com/coronavirus/" target="_blank"
 						rel="nofollow">Covid-19</a>
 				</nav>
@@ -204,7 +203,7 @@
 								<img class="place_photo" src="{% static 'hello/images/main/sights/place1.jpg' %}">
 								<div class="about_place">
 									<h3 class="place_name">Замок Нойшванштайн</h3>
-									<p class="place_text"><b>Страна:</b> <a class="place_href" href="#">Германия</a></p>
+									<p class="place_text"><b>Страна:</b> <a class="place_href" href="{% url 'country' 'Германия' %}">Германия</a></p>
 									<p class="place_text"><b>Адрес: </b> Neuschwansteinstraße 20, 87645 Schwangau</p>
 									<p class="place_text"><b>Бавария: </b> Швангау</p>
 									<p class="place_text"><b>Цена билета: </b> от 12 €</p>
@@ -223,7 +222,7 @@
 								<img class="place_photo" src="{% static 'hello/images/main/sights/place2.jpg' %}">
 								<div class="about_place">
 									<h3 class="place_name">Диснейленд</h3>
-									<p class="place_text"><b>Страна:</b> <a class="place_href" href="#">Франция</a></p>
+									<p class="place_text"><b>Страна:</b> <a class="place_href" href="{% url 'country' 'Франция' %}">Франция</a></p>
 									<p class="place_text"><b>Адрес: </b> Paris, 7777 Marne-la-Vallée</p>
 									<p class="place_text"><b>Город: </b> Париж</p>
 									<p class="place_text"><b>Цена билета: </b>56 € - один день</p>
@@ -242,7 +241,7 @@
 								<div class="about_place">
 									<h3 class="place_name">Лондонский Глаз</h3>
 									<p class="place_text"><b>Страна:</b> <a class="place_href"
-											href="#">Великобритания</a></p>
+											href="{% url 'country' 'Великобритания' %}">Великобритания</a></p>
 									<p class="place_text"><b>Адрес: </b> The Queen's Walk, Bishop's, London SE1 7PB</p>
 									<p class="place_text"><b>Город: </b> Лондон</p>
 									<p class="place_text"><b>Цена билета:</b>от 30 фунтов</p>
@@ -498,9 +497,9 @@
 		<div class="container">
 			<div class="footer__inner">
 				<nav class="nav_footer" id="nav">
-					<a class="nav__link_footer" href="#"data-scroll="#about">Страны</a>
-					<a class="nav__link_footer" href="#"data-scroll="#place">Путеводитель</a>
-					<a class="nav__link_footer" href="#"data-scroll="#service">Сервисы</a>
+					<a class="nav__link_footer" href="#about">Страны</a>
+					<a class="nav__link_footer" href="#place">Путеводитель</a>
+					<a class="nav__link_footer" href="#service">Сервисы</a>
 					<a class="nav__link_footer" href="https://wikiway.com/coronavirus/" target="_blank"
 						rel="nofollow">Covid-19</a>
 				</nav>
@@ -515,11 +514,6 @@
 		</div>
 
 	</footer>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript" src="{% static 'hello/js/main.js' %}"></script>
 
 </body>
 

@@ -363,13 +363,15 @@ margin:0 auto;
 .place{
 	margin: 30px 0px;
     display: block;
+
     height: 80%;
- 	padding: 8px;
+    padding: 8px;
  	position: relative;
 }
 .place .slick-slider{
 	padding: 0 110px;
 }
+
 .place_img{
     display: table;
 	position: relative;
@@ -383,58 +385,21 @@ margin:0 auto;
      display: table-cell;
 	  vertical-align: middle;
       width: 85%;
-      padding: 10px 1px 10px 10px;
+      padding: 10px 35px 10px 10px;
 }
 
 .about_place{
 	display: table-cell;
 	vertical-align: middle;
 	height: auto;
-	width: 50%;
+	width: 55%;
 	padding: 1px 1px 1px 1px;
 	text-align: justify;
 }
-.slick-arrow{
-	font-size: 0;
-	color: transparent;
 
-	border: 0;
-	background: none;
-	cursor: pointer;
 
-	position: absolute;
-	top:50%;
-	z-index: 1;
-	transform: translateY(-50%);
-
-}
-
-.slick-arrow:focus{
-outline: 0;
-}
-/*стрелочки*/
-.slick-arrow:after{
-	content: "";
-	display: block;
-	width: 35px;
-	height: 35px;
-
-	border-top:3px solid #ccc;
-	border-left: 3px solid #ccc;
-
-}
-.slick-prev{
-	left:-20px;
-	transform: rotate(315deg);
-}
-.place_btn--next, .slick-next{
-	right:-20px;
-	transform: rotate(135deg);
-}
-
- 
 .place_item:hover .place_img{
-	transform: translate3d(8px, 0px, 8px);
+	transform: translate3d(3px, 0px, 3px);
 	border: 2px solid #E6E6FA;
 }
 
@@ -449,7 +414,6 @@ outline: 0;
 
  	 transition: transform .3s linear;
  }
-
 .place_name{
 	
 	font-size: 22px;
