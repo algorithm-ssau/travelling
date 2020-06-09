@@ -25,8 +25,7 @@ SECRET_KEY = '8o@01(g-88^ga8!dr7ue#u#a*-r6@_09ss9#0=j*+%(4wcf5hp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["travelssau.herokuapp.com", "127.0.0.1"
-]
+ALLOWED_HOSTS = ["travelssau.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -43,6 +42,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,8 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'web_project.urls'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -121,7 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+STATIC_ROOT =  os.path.join(BASE_DIR, 'static_collected') 
 MEDIA_URL = '/media/'
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media/') 
+
+
